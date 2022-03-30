@@ -1,5 +1,5 @@
 <?php
-
+// require_once __DIR__ . '/vendor/autoload.php';
 /**
 *
 * main controller
@@ -24,10 +24,6 @@ $router->add('{controller}/{action}');
 $router->add('{controller}/{id:\d+}/{action}');
 $router->add('{controller}/{action}/{id:\d+}');
 $router->add('admin/{controller}/{action}',['namespace' =>'Admin']);
-echo $_SERVER["QUERY_STRING"];
-echo "<pre>";
-// var_dump($router->getRoutes());
-echo "</pre>";
 $router->dispatch($_SERVER["QUERY_STRING"]);
 
 

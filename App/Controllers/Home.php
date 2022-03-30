@@ -15,12 +15,12 @@ class Home extends \Core\Controller
      * @return void
      */
     public function indexAction(){
-        View::render('Dashboard/dashboard.php',[
+        View::render('Home/index.php',[
             'username'=>'ali',
             'friends'=>['badr','omer']
         ]);
     }
-
-    protected function before(){echo " before";}
-    protected function after(){echo " after";}
+    
+    protected function before(){}
+    protected function after(){}
 }

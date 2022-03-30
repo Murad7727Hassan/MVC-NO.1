@@ -26,14 +26,17 @@ class Catgery extends \Core\Controller
             'friends'=>['badr','omer']
         ]);
     }
-
-    function add(){
-
+    public function add(){
+        View::render('Catgery/add.php',[
+            'username'=>'ali',
+            'friends'=>['badr','omer']
+        ]);
+   }
+     
+   public  function edit(){
+    echo "edit  "; 
     }
-    function edit(){
-        
-    }
-    function delete(){
+    public function delete(){
         
     }
 

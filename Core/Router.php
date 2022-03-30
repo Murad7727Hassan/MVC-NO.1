@@ -35,23 +35,25 @@ class Router
 
 	}
 	public function dispatch($url)
-	{   
+	{  
 		$url=$this->removeQueryStringVariables($url);
+		
 		if($this->match($url)){
 			$controller = $this->params['controller'];
 			// echo 'kkkkkk';
 			// var_dump($this->params) ;
 			$controller = $this->convertToStudlyCaps($controller);
 			//$controller= "App\Controllers\\$controller";
+			
 			$controller = $this->getNamespace().$controller;
 			if(class_exists($controller)){
+				
 				$controller_object = new $controller($this->params);
 				$action   =null;
 				if (isset ($this->params['action'])){
-					$action =$this->params['action'];
+					
+					$action    =$this->params['action'];
 					$action    = $this->convertToCamelCase($action);
-
-
 				}
 				else{
 					$action='index';
@@ -61,6 +63,7 @@ class Router
 					$controller_object->$action();
 				}else{
 					echo "Method $action in controller  $controller not found";
+					$controller_object->$action();
 				}
 			}else{
 				echo "Controller class  $controller not found";

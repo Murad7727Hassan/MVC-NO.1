@@ -1,0 +1,15 @@
+{
+    "name": "murad/hassan-almodi",
+    "autoload": {
+        "psr-4": {
+            "Murad\\HassanAlmodi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "murad7727hassan",
+            "email": "murad7727hassan@gmail.com"
+        }
+    ],
+    "require": {}
+}
